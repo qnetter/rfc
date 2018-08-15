@@ -1,0 +1,61 @@
+GPU support RFC
+
+| Field  | Value      |
+|:-------|:-----------|
+| Status | Draft      |
+| Date   | 2018-08-14 |
+
+## Introduction
+
+> This section targets end users, operators, PM, SEs and anyone else that might
+need a quick explanation of your proposed change.
+
+### Problem description
+
+> Why do we want this change and what problem are we trying to address?
+
+More and more computationally intensive applications, especially in the areas of Big Data analysis and AI/ML, are being built to use Nvidia GPUs for processing. Our operators need to be able to provide access to Nvidia GPUs from containerized applications, and to safely schedule them via Kubernetes in CaaS Platform.
+
+### Proposed change
+
+We need to:
+- provide an operator-friendly way to install and configure the Nvidia closed-source driver, and to maintain it when kernel and/or driver updates are needed
+- support GPU-dependent containers in CRI-O
+- identify GPU-dependent containers and GPU-capable worker nodes (whether bare-metal or virtualized with GPU pass-through), and assure that these containers are scheduled only on nodes that have the resource they need
+- make operators aware when there are no GPU-capable workers available on which to start, scale, or otherwise schedule a GPU-dependent container
+- document the steps required for operators to achieve the needs above
+
+## Detailed RFC
+
+> In this section of the document the target audience is the dev team. Upon
+> reading this section each engineer should have a rather clear picture of what
+> needs to be done in order to implement the described feature. 
+
+### Proposed change (Detailed)
+
+> This section is freeform - you should describe your change is as much detail
+> as possible. Please also ensure to include any context or background info here.
+> For example, do we have existing components which can be reused or altered.
+> 
+> By reading this section, each team memeber should be able to know what exactly
+> you're planning to change and how.
+
+### Dependencies
+
+> Highlight how the change may affect the rest of the product (new components,
+> modifications in other areas), or other teams/products.
+
+### Concerns and Unresolved Questions
+
+> List any concerns, unknowns, and generally unresolved questions etc.
+
+## Alternatives
+
+> List any alternatives considered, and the reasons for choosing this option
+> over them.
+
+## Revision History:
+
+| Date       | Comment       |
+|:-----------|:--------------|
+| 2018-08-14 | Initial Draft |
