@@ -10,6 +10,8 @@ GPU support RFC
 > This section targets end users, operators, PM, SEs and anyone else that might
 need a quick explanation of your proposed change.
 
+This reflects FATE 326608 (https://fate.suse.com/326608)
+
 ### Problem description
 
 > Why do we want this change and what problem are we trying to address?
